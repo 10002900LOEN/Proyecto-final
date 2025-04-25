@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="imagenes/miniature.png" rel="icon">
+    <link href="stylesheet.css" rel="stylesheet";>
+    <title>Página Index</title>
+    <style>
+        
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .banner-container {
+            position: relative;
+            width: 100%;
+            height: 300px;
+        }
+        
+        .buttons {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            gap: 20px;
+        }
+        .buttons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 80px;
+            height: 80px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: background 0.73s;
+        }
+        .buttons a img {
+            width: 50px;
+            height: 50px;
+        }
+        .buttons a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .section {
+            width: 100%;
+            height: 500px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            cursor: pointer;
+        }
+        .section .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s;
+        }
+        .section:hover .overlay {
+            opacity: 1;
+        }
+ 
+    </style>
+</head>
+<body>
+    </div>
+    <div class="section" style="background-image: url('imagenes/banner\ galery.png');" onclick="location.href='Galery.html'">
+        <div class="overlay">
+            <h2>Galería</h2>
+            <p>Explora mis renders hay dos secciones claras.</p>
+        </div>
+    </div>
+    <div class="section" style="background-image: url('imagenes/aboutmeBanner.png');" onclick="location.href='SobreMi.html'">
+        <div class="overlay">
+            <h2>Sobre mi</h2>
+            <p>¿Quien soy y que hago?.</p>
+        </div>
+    </div>
+    <div class="section" style="background-image: url('imagenes/cover3.png');" onclick="location.href='arte_sfw.html'">
+
+        <div class="overlay">
+            <h2>Videos</h2>
+            <p>Mira nuestro contenido multimedia.</p>
+        </div>
+    </div>
+    <script>
+        let images = ['img1.jpg', 'img2.jpg', 'img3.jpg'];
+        let index = 0;
+        function changeBanner() {
+            document.getElementById('banner').style.backgroundImage = `url(${images[index]})`;
+            index = (index + 1) % images.length;
+            setTimeout(changeBanner, Math.random() * (40000 - 24000) + 24000);
+        }
+        changeBanner();
+    </script>
+</body>
+</html>

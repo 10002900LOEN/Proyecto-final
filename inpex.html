@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="imagenes/logo_viva-playa-72.webp" rel="icon">
+    <link href="stylesheet.css" rel="stylesheet";>
+    <title>Página con Secciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            box-sizing:content-box;
+            font-family: Arial, sans-serif;
+
+        }
+        
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+        .section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+
+        }
+        .sobre-mi {
+            background: url("imagenes/hov1.png") center/cover;
+        }
+        .sobre-mi:hover {
+            background: url("imagenes/aboutMe.png") center/cover;
+        }
+        .galeria {
+            background: url("imagenes/hov2.png") center/cover;
+        }
+        .galeria:hover {
+            background: url("imagenes/abut2.png") center/cover;
+        }
+        .recomendaciones {
+            background: url("imagenes/hov3.png") center/cover;
+        }
+        .recomendaciones:hover {
+            background: url("imagenes/abut3.png") center/cover;
+        }
+        .header .Acontainer
+        {
+            transition: background 0.95s ease-out;
+        }
+    </style>
+</head>
+<header>
+    <div class="menu">
+        <button class="menu-button"></button>
+        <div class="menu-content">
+            <a href="index.html" class="inicio">Inicio</a>
+            <a href="informacion.html" class="informacion">Información</a>
+            <a href="galeria_sfw.html" class="galeria-sfw">Galería SFW</a>
+            <a href="NSFW.html" class="galeria-nsfw">Galería NSFW</a>
+        </div>
+<body>
+    
+    </header>
+    <div class="Acontainer">
+        <div class="section sobre-mi">Sobre Mí</div>
+        <div class="section galeria">Galería</div>
+        <div class="section recomendaciones">Recomendaciones</div>
+    </div>
+</body>
+</html>

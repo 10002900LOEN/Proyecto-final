@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="imagenes/logo_viva-playa-72.webp" rel="icon">
+    <link href="stylesheet.css" rel="stylesheet";>
+    <title>Galería nsfw</title>
+    <style>
+       .warning-screen {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .btn { padding: 10px 20px; margin: 10px; cursor: pointer; border: none; border-radius: 5px; }
+        .btn-enter { background: green; color: white; }
+        .btn-index { background: red; color: white; }
+    </style>
+</head>
+<body>
+  <div class="warning-screen" id="warning">
+    <h2>Advertencia: Contenido Sensible</h2>
+    <p>Esta galería contiene imágenes que pueden ser sensibles para algunas personas.</p>
+    <button class="btn btn-enter" onclick="enterGallery()">Entrar</button>
+    <button class="btn btn-index" onclick="goToIndex()">Volver a Index</button>
+</div>
+    <div class="header">
+        <div class="menu">
+            <button class="menu-button"></button>
+            <div class="menu-content">
+                <a href="index.html" class="inicio">Inicio</a>
+                <a href="informacion.html" class="informacion">Información</a>
+                <a href="galeria_sfw.html" class="galeria-sfw">Galería SFW</a>
+                <a href="NSFW.html" class="galeria-nsfw">Galería NSFW</a>
+            </div>
+        </div>
+    </div>
+    <div class="gallery" id="gallery">
+        <a href="#" onclick="openModal(0)">
+            <img src="imagenes/NSFW/N1.png" loading="lazy" alt="Imagen 1">
+            <div class="caption">Cazadora de tesoros</div>
+        </a>
+        <a href="#" onclick="openModal(1)">
+            <img src="imagenes/NSFW/N2.png" loading="lazy" alt="Imagen 1">
+            <div class="caption">baño</div>
+        </a>
+        <a href="#" onclick="openModal(2)">
+            <img src="imagenes/NSFW/N3.png" loading="lazy" alt="Imagen 1">
+            <div class="caption">baño</div>
+        </a>
+        <!-- Agregar más imágenes con índices secuenciales -->
+    </div>
+    
+    <div class="modal" id="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modal-img" src="">
+            <div class="modal-buttons">
+                <button onclick="prevImage()">&#9665;</button>
+                <button onclick="nextImage()">&#9655;</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const images = [
+    { src: "imagenes/NSFW/N1.png", desc: 'Descripción de la imagen 1' },
+    { src: "imagenes/NSFW/N2.png", desc: 'Descripción de la imagen 2' },
+    { src: "imagenes/NSFW/N3.png", desc: 'Descripción de la imagen 3' },
+];
+        
+        let currentIndex = 0;
+        
+        function openModal(index) {
+            currentIndex = index;
+            updateModal();
+            document.getElementById('modal').style.display = 'flex';
+        }
+        
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateModal();
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateModal();
+        }
+
+        function updateModal() {
+            document.getElementById('modal-img').src = images[currentIndex].src;
+        }
+        function enterGallery() {
+            document.getElementById('warning').style.display = 'none';
+            document.getElementById('gallery').style.display = 'grid';
+        }
+        function goToIndex() {
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

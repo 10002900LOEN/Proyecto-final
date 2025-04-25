@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="stylesheet.css" rel="stylesheet";>
+    <title>Página con Secciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .Abutton-image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: url('boton.jpg') center/cover;
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+        .Acontainer {
+            display: flex;
+            height: 100vh;
+        }
+        .Asection {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+            color: white;
+            transition: background 0.5s ease-in-out;
+            cursor: pointer;
+        }
+        .sobre-mi {
+            background: url("imagenes/Galery/Galery\ SFW.png") center/cover;
+            font-family: cursive;
+            font-size: 82px;
+            color: red;
+        }
+        .sobre-mi:hover {
+            background: url("imagenes/Galery/HOVERSFW.png") center/cover;
+        }
+        .galeria {
+            background: url("imagenes/Galery/GaleryNsfw.png") center/cover;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 71px;
+            color:blue;
+        }
+        .galeria:hover {
+            background: url("imagenes/Galery/HOVNSFW.png") center/cover;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu">
+        <button class="menu-button"></button>
+        <div class="menu-content">
+            <a href="index.html" class="inicio">Inicio</a>
+            <a href="Galery.html" class="informacion">Galería</a>
+            <a href="SobreMi.html" class="galeria-sfw">Sobre mi</a>
+            <a href="NSFW.html" class="galeria-nsfw">Video</a>
+        </div>
+    </header>
+    <div class="Acontainer">
+        <div class="Asection sobre-mi" onclick="window.location.href='sobre-mi.html'">galeria sfw</div>
+        <div class="Asection galeria" onclick="window.location.href='NSFW.html'">Galería NSFW</div>
+    </div>
+</body>
+</html>
